@@ -1,0 +1,106 @@
+/* підключення шрифтів */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+/* налаштування видимої частини вікна браузера */
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* налаштування контейнера для великого (обраного) зображення */
+.feature {
+  padding-bottom: 200px;
+  /* offset thumbnail strip */
+}
+
+/* налаштування великого зображення */
+.feature img {
+  max-height: 615px;
+  max-width: 800px;
+}
+
+/* налаштування підпису */
+.caption {
+  text-align: center;
+  font-size: 14px;
+}
+
+/* налаштування контейнеру для галереї невеличких зображень */
+.thumbnails {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  overflow-x: scroll;
+  scroll-snap-type: both mandatory;
+  scroll-padding: 0 100px;
+}
+
+/* налаштування оболонки елементів галереї */
+.thumbnails ul {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  gap: 30px;
+  padding: 0 100px;
+}
+
+/* налаштування окремих елементів галереї */
+.thumbnails li {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+/* налаштування для останнього елементу галереї */
+.thumbnails li:last-child img {
+  margin-right: 100px;
+}
+
+/* налаштування активного (обраного) елементу галереї */
+.thumbnails .selected {
+  outline: 10px solid #c8c2c7;
+  opacity: 0.5;
+  outline-offset: -10px;
+}
+
+/* налаштування маленьких зображень */
+.thumbnails img {
+  object-fit: cover;
+  width: 175px;
+  height: 175px;
+  vertical-align: middle;
+}
+
+/* налаштування елементів керування галереєю */
+.left,
+.right {
+  position: absolute;
+  background: #c8c2c7;
+  opacity: 0.5;
+  width: 100px;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 200px;
+  box-sizing: border-box;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.right img {
+  transform: rotate(180deg);
+}
